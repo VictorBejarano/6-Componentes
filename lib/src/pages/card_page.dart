@@ -11,7 +11,13 @@ class CardPage extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(10.0),
-        children: <Widget>[_cardTipo1()],
+        children: <Widget>[
+          _cardTipo1(),
+          SizedBox(
+            height: 30,
+          ),
+          _cardTipo2()
+        ],
       ),
     );
   }
@@ -41,6 +47,27 @@ class CardPage extends StatelessWidget {
                 child: Text('Ok'),
               ),
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  _cardTipo2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            image: NetworkImage(
+                'https://photographylife.com/wp-content/uploads/2016/06/Mass.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('No tengo idea de que poner'),
           )
         ],
       ),
